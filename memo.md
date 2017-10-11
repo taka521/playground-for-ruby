@@ -52,6 +52,24 @@ hello
 # 結果 => Hello World!
 ```
 
+## キーワード引数
+
+メソッドではキーワード引数を定義できる。
+
+```ruby
+def method(arg1: 'A', arg2: 'B', arg3: 'C')
+  puts "aeg1 = #{arg1}, arg2 = #{arg2}, arg3 = #{arg3}"
+end
+  
+method(arg1: 'Hello!')
+# aeg1 = Hello!, arg2 = B, arg3 = C
+  
+method(arg2: 'World!')
+# aeg1 = A, arg2 = World!, arg3 = C
+  
+method(arg1: 'Hello', arg3: 'World!')
+# aeg1 = Hello, arg2 = B, arg3 = World!
+```
 
 
 ## 文字列で式を評価する
@@ -181,8 +199,17 @@ rubyでオブジェクト同士の等価性を評価したい場合は `==` 演�
 objectA == objectB
 ```
 
-逆に２つのオブジェクトが同一であるか（参照が等しいか）を確認する場合には、`equal?` メソッドを使用する。
+逆に２つのオブジェクトが同一であ
+るか（参照が等しいか）を確認する場合には、`equal?` メソッドを使用する。
 
 ```ruby
 objectA.equal?(objectB)
 ```
+
+
+### 変数
+
+* `$変数名` : グローバル変数
+* `@変数名` : インスタンス変数
+* `@@変数名`: クラス変数
+

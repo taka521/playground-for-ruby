@@ -26,3 +26,17 @@ $ rbenv versions       // 2.4.2になっていることを確認
 $ echo "print 'Hello World'" > hello.rb  // hello.rbを作成
 $ ruby hello.rb        // Hello Worldが表示されればOK
 ```
+
+## REPL
+
+RubyのREPLは、`irb` コマンドで起動できる。
+
+```
+$ irb
+irb(main):001:0> p "hello"
+"hello"
+=> "hello"
+irb(main):002:0> 
+```
+
+終了は `exit` コマンド。
