@@ -28,7 +28,46 @@ Javaのinterfaceに近い印象だけど、モジュールとinterfaceは使い�
 Scalaとかでも見るけど、yieldってなに？
 どこで使うん?
 
-### A.
+### A. メソッドに渡されたブロックの呼び出しを行う糖衣構文
+
+以下のサイトが個人的に分かりやすかった。  
+ちなみに読み方は「イールド」らしい。
+
+* [【初心者必見】Ruby yieldについて知る！ - Qiita](https://www.sejuku.net/blog/20478)
+* [Ruby block/proc/lambdaの使いどころ - Qiita](https://qiita.com/kidach1/items/15cfee9ec66804c3afd2)
+
+Rubyは、メソッドに対して、引数の他に **ブロック** を渡すことが可能。  
+で、このブロックというのが「処理の塊」のことを指している。  
+このブロックを実行するのが「yield」になる。
+
+```ruby
+[1, 2, 3].each { |i| p i } # {}で囲われた処理がブロック
+```
+
+分かりやすいように、ブロックだけを実行するメソッドを定義する。
+
+```ruby
+def runYeild
+  yield
+end
+
+runYeild { p 'yeild実行!!' } # 結果 => "yeild実行!!"
+```
+
+`runYeild` メソッドに渡されたブロック `{ p 'yeild実行!!' }` が実行されていることが分かる。  
+ただ、ブロックが渡されないと `no block given (yield) (LocalJumpError)` が発生する。  
+そのため、ブロックが渡されているかをチェックするために `block_given?` メソッドが用意されている。
+`block_given?` を用いて `runYeild` メソッドを書き直すと以下のようになる。
+
+```ruby
+def runYeild
+  yield if block_given?
+end
+```
+
+こうすれば、引数としてブロックが渡された時にだけ `yeild` が実行される。
+
+JavaやScalaのラムダに近いなという印象。
 
 
 ## Q.selfの意味は?
@@ -37,6 +76,7 @@ Scalaとかでも見るけど、yieldってなに？
 あと、使い所は？
 
 ### A.
+
 
 
 

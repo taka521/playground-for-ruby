@@ -9,6 +9,8 @@ Rubyで遊ぶためのリポジトリ。
 * [オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル](https://docs.ruby-lang.org/ja/2.4.0/doc/index.html)
 * [MacにHomeBrew,rbenv,bundlerをインストールする](https://qiita.com/shinkuFencer/items/3679cfd966f6a61ccd1b)
 * [Rubyを始めたけど今ひとつRubyのオブジェクト指向というものが掴めないという人、ここに来て見て触って！](http://melborne.github.io/2013/02/07/understand-ruby-object/)
+* [RubyのModuleの使い方とはいったい](https://qiita.com/shiopon01/items/fd6803f792398c5219cd)
+
 
 ## Rubyのインストール
 
