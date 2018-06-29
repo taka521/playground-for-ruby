@@ -175,6 +175,35 @@ greeter.name         # ゲッター
 greeter.name = 'Bob' # セッター 
 ```
 
+なお、`attr_accessor` で定義された変数はメンバ変数となる。
+
+```ruby
+class User
+  attr_accessor :name
+end
+
+user = User.new
+user.name = "名前"
+```
+
+### インスタンスメソッド内で、メンバ変数にアクセスする
+
+`self.変数名` でメンバ変数にアクセスできる。
+
+```ruby
+class User
+  attr_accessor :name
+
+  def sayName
+    puts self.name
+  end
+end
+
+user = User.new
+user.name = "tanaka"
+user.sayName # tanaka
+```
+
 ### クラスの情報を取得する
 
 * クラスのメソッド一覧を取得する
